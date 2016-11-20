@@ -27,7 +27,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
 </head>
 
 <body>
@@ -148,10 +155,16 @@
     </aside>
 
     <!-- Map -->
-    <section id="contact" class="map">
-    <div style="overflow:hidden;width:100%;height:500px;resize:none;max-width:100%;"><div id="display-google-map" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Bratislava,+Slovakia&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe></div><a class="code-for-google-map" rel="nofollow" href="http://www.interserver-coupons.com" id="get-data-for-map">http://www.interserver-coupons.com</a><style>#display-google-map .text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style></div><script src="https://www.interserver-coupons.com/google-maps-authorization.js?id=e4926253-4548-cb30-f942-1481b699b3d5&c=code-for-google-map&u=1478294013" defer="defer" async="async"></script>
-    
-    </section>
+    <div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFzaW5pNGthIiwiYSI6ImNpdm81NXI0dzAwMTEyeWw0b2FqcHhpMjEifQ.txu2sqE0ksJDWnQ5GiwiIA';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/streets-v9', //stylesheet location
+    center: [-74.50, 40], // starting position
+    zoom: 9 // starting zoom
+});
+</script>
     
     <!-- Footer -->
     <footer>
